@@ -2,8 +2,8 @@
  * All project content lives here. The Work section and the case study pages
  * (/work/<slug>) both read from this file. Edit text and images here only.
  *
- * image / cover: files live in /public/project/ (e.g. /public/project/project-1.jpeg)
- *        and are written as "/project/project-1.jpeg" (no "public", and the
+ * image / cover: files live in /public/project/ (e.g. /public/project/project-1.jpg)
+ *        and are written as "/project/project-1.jpg" (no "public", and the
  *        extension must match the real file: .jpeg, .jpg or .png).
  *        Leave image out to show the placeholder tile.
  */
@@ -28,7 +28,7 @@ export type CaseStudy = {
   role: string;
   duration?: string; // leave out to hide it on the page
   year: string;
-  cover?: string; // large image under the intro, e.g. "/project/project-1.jpeg"
+  cover?: string; // large image under the intro, e.g. "/project/project-1.jpg"
   overview?: string;
   challenge?: string;
   whatIDid?: string[];
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     year: "2026",
     summary: "Ship chartering and fleet operations platform, with voyages, vessels and charter deals in one workspace.",
     tags: ["UI/UX Design", "Web App", "Dashboard"],
-    image: "/project/project-1.jpeg",
+    image: "/project/project-1.jpg",
     blur: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAALABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDovtmnzymDU38uOP51YtjLA9Kzpmtpb9xp5LxAjbwR29+ax9TZiJX3HcW6596v2k0kMqiIhQQOwrFs2SP/2Q==",
     tone: "#ECEAF4",
     caseStudy: {
@@ -63,7 +63,7 @@ export const projects: Project[] = [
       role: "Product Designer",
       duration: "2 weeks",
       year: "2026",
-      cover: "/project/project-1.jpeg",
+      cover: "/project/project-1.jpg",
       overview:
         "The dashboard needed to bring four separate workflows (Vessels, Cargo Orders, Voyage Estimator, and Report & Bunker Cost) into a single, coherent system. Each module served a different part of the chartering desk, and the brief was to design an interface that let traders move between them without losing context or hunting for information they relied on.",
       challenge:
@@ -129,7 +129,7 @@ export const projects: Project[] = [
     year: "2025",
     summary: "HR mobile app designed and built end to end, from first screens to launch and ongoing support.",
     tags: ["Product Design", "Mobile", "iOS & Android"],
-    image: "/project/project-3.png",
+    image: "/project/project-3.jpg",
     blur: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAMABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDpokhuriOFm2buh6jPpVGa1azvZLeQ7mXlWP8AEp6H+n4UyR2VdynBHII7VBGuxmkyxdjlmY5JpDP/2Q==",
     tone: "#F2ECEA",
     caseStudy: {
@@ -140,7 +140,7 @@ export const projects: Project[] = [
       role: "Lead Product Designer",
       duration: "2 months",
       year: "2025",
-      cover: "/project/project-3.png",
+      cover: "/project/project-3.jpg",
       overview:
         "The HR software's web dashboard worked well, but the company also needed a mobile app covering the same core functionality (leave balance, requests, approvals, and company info) in a form employees could use from their phones. I designed this end to end, from information architecture through to developer handoff.",
       challenge:
@@ -167,7 +167,7 @@ export const projects: Project[] = [
     year: "2025",
     summary: "A property sales and rentals site for a UAE business, designed and built end to end with React.",
     tags: ["Website", "React", "SEO"],
-    image: "/project/project-4.png",
+    image: "/project/project-4.jpg",
     blur: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAMABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwB/inUtXh1CNNNuZ4o/KyVjh35bJ74NR+E9U1m41GRNUluGjERKiSMKM5Ht1romcujDaoyOoUZFSQBEt0xGmQvUjmkM/9k=",
     tone: "#EAEEF2",
     caseStudy: {
@@ -178,7 +178,7 @@ export const projects: Project[] = [
       role: "Frontend Developer and UI/UX Designer",
       duration: "2 weeks",
       year: "2025",
-      cover: "/project/project-4.png",
+      cover: "/project/project-4.jpg",
       overview:
         "A real estate website for a UAE based business, built for the MD to list and manage property sales and rentals covering both buyers and sellers. The site was developed largely with AI assistance, using React and JavaScript as the core stack.",
       challenge:
@@ -206,7 +206,7 @@ export const projects: Project[] = [
     year: "2026",
     summary: "A grocery shopping app for a local supermarket, taken from research to an MVP prototype in a week.",
     tags: ["Ecommerce", "UI/UX", "UI Interaction"],
-    image: "/project/project-5.png",
+    image: "/project/project-5.jpg",
     blur: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAMABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDkdG0S11TVxb3Fy8Ucqt5ZQAkvjgc1k6jYT6dfS2dyuJYmwwp9tPLE6mN2Ug5Ug8g+oqG6eSadpZ5Xkkc5Z3bJJ9zQCP/Z",
     tone: "#F1EDF6",
     caseStudy: {
@@ -217,7 +217,7 @@ export const projects: Project[] = [
       role: "UI/UX Designer",
       duration: "1 week",
       year: "2026",
-      cover: "/project/project-5.png",
+      cover: "/project/project-5.jpg",
       overview:
         "An ecommerce mobile app for a local supermarket client, covering product browsing, categories, and recommendations. The project was scoped down early. The client paused it after a few screens due to budget constraints, so the work stayed at design stage without moving into development.",
       challenge:
