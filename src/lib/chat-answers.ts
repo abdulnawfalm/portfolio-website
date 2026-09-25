@@ -37,7 +37,7 @@ export const ANSWERS: Answer[] = [
   {
     match: ["experience", "experienced", "years", "year", "yrs", "how long", "senior", "junior", "level", "background", "career", "worked"],
     text:
-      "2.5 years of relevant experience in designing user interfaces and products, with 20+ projects shipped. Most recently a UI/UX Designer role covering HR software, a ship chartering platform, and client web work.",
+      "2.5 years of relevant experience in designing.",
   },
   {
     match: ["available", "availability", "free", "full time", "full-time", "fulltime", "part time", "hire", "hiring", "join", "start", "notice", "period", "open to", "on-site", "onsite", "office"],
