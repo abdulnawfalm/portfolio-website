@@ -63,12 +63,12 @@ const PANEL_PATH = [
 function FlutedBackground() {
   return (
     <div aria-hidden="true" className="absolute inset-0">
-      {/* Colour: deep violet, a soft glow behind the head so your face stays the brightest part */}
-      <div className="absolute inset-0 bg-[radial-gradient(55%_40%_at_50%_34%,#7A5BD6_0%,rgba(122,91,214,0)_70%),linear-gradient(180deg,#4B329E_0%,#35207A_50%,#1E1147_100%)]" />
+      {/* Colour: Apple graphite, a soft glow behind the head so your face stays the brightest part */}
+      <div className="absolute inset-0 bg-[radial-gradient(55%_40%_at_50%_34%,#6E6E73_0%,rgba(110,110,115,0)_70%),linear-gradient(180deg,#48484A_0%,#2C2C2E_50%,#1D1D1F_100%)]" />
       {/* Vertical ribs: light edge, dark groove */}
-      <div className="absolute inset-0 opacity-90 blur-[1.5px] [background:repeating-linear-gradient(90deg,rgba(255,255,255,0.14)_0px,rgba(255,255,255,0.02)_10px,rgba(10,0,40,0.35)_22px,rgba(255,255,255,0.14)_26px)]" />
+      <div className="absolute inset-0 opacity-90 blur-[1.5px] [background:repeating-linear-gradient(90deg,rgba(255,255,255,0.14)_0px,rgba(255,255,255,0.02)_10px,rgba(0,0,0,0.35)_22px,rgba(255,255,255,0.14)_26px)]" />
       {/* Wider soft bands for depth */}
-      <div className="absolute inset-0 opacity-70 blur-[8px] [background:repeating-linear-gradient(90deg,rgba(255,255,255,0)_0px,rgba(255,255,255,0.10)_40px,rgba(255,255,255,0)_80px,rgba(10,0,40,0.30)_120px,rgba(255,255,255,0)_160px)]" />
+      <div className="absolute inset-0 opacity-70 blur-[8px] [background:repeating-linear-gradient(90deg,rgba(255,255,255,0)_0px,rgba(255,255,255,0.10)_40px,rgba(255,255,255,0)_80px,rgba(0,0,0,0.30)_120px,rgba(255,255,255,0)_160px)]" />
     </div>
   );
 }
@@ -92,7 +92,7 @@ function ProfileCard() {
   const pct = (v: number, of: number) => `${(v / of) * 100}%`;
 
   return (
-    <div className="relative mx-auto w-full max-w-[460px] overflow-hidden rounded-[32px] bg-[#F3EEFB] p-5 md:p-6">
+    <div className="relative mx-auto w-full max-w-[460px] overflow-hidden rounded-[32px] bg-[#F5F5F7] p-5 md:p-6">
 
       {/* Shape definition (not visible) */}
       <svg width="0" height="0" className="absolute" aria-hidden="true">
@@ -125,8 +125,8 @@ function ProfileCard() {
               }
             />
           )}
-          {/* Deep violet fade at the bottom so the name reads clearly */}
-          <div className="absolute inset-x-0 bottom-0 z-[2] h-[50%] bg-gradient-to-t from-[#2B1760]/90 via-[#2B1760]/40 to-transparent" />
+          {/* Dark fade at the bottom so the name reads clearly */}
+          <div className="absolute inset-x-0 bottom-0 z-[2] h-[50%] bg-gradient-to-t from-[#1D1D1F]/90 via-[#1D1D1F]/40 to-transparent" />
 
           {/* Name + position — bottom-left, beside the info notch */}
           <div className="absolute bottom-[5%] left-[6%] right-[60%] z-[3] text-white">

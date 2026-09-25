@@ -13,12 +13,12 @@ const SCROLL_PAD = "scroll-px-5 md:scroll-px-10 lg:scroll-px-[max(4rem,calc((100
 
 // Placeholder backgrounds (brand lavender → violet) until real images are added
 const PLACEHOLDER_GRADIENTS = [
-  "linear-gradient(160deg,#D9CCF8 0%,#A48BEA 55%,#5B41B8 100%)",
-  "linear-gradient(200deg,#E6DDFB 0%,#B7A2F0 50%,#6A50C6 100%)",
-  "linear-gradient(145deg,#CDBDF5 0%,#9479E0 55%,#4E3AA6 100%)",
-  "linear-gradient(185deg,#E2D8FA 0%,#AE97EE 50%,#624ABF 100%)",
-  "linear-gradient(170deg,#D4C6F7 0%,#9C83E5 55%,#5540B0 100%)",
-  "linear-gradient(210deg,#DDD1F9 0%,#A68EEB 52%,#5D45BA 100%)",
+  "linear-gradient(180deg,#F5F5F7 0%,#D2D2D7 100%)",
+  "linear-gradient(180deg,#F5F5F7 0%,#D2D2D7 100%)",
+  "linear-gradient(180deg,#F5F5F7 0%,#D2D2D7 100%)",
+  "linear-gradient(180deg,#F5F5F7 0%,#D2D2D7 100%)",
+  "linear-gradient(180deg,#F5F5F7 0%,#D2D2D7 100%)",
+  "linear-gradient(180deg,#F5F5F7 0%,#D2D2D7 100%)",
 ];
 
 function Arrow({ dir, className = "" }: { dir: "left" | "right" | "up-right"; className?: string }) {
@@ -40,15 +40,15 @@ function Arrow({ dir, className = "" }: { dir: "left" | "right" | "up-right"; cl
 function FolderThumb({ posts }: { posts: GalleryItem[] }) {
   const uid = useId().replace(/[^a-zA-Z0-9]/g, "");
   return (
-    <div className="absolute inset-0 bg-[#150B2E]">
+    <div className="absolute inset-0 bg-[#1D1D1F]">
       {/* Soft lavender glow behind the folder */}
-      <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_50%_62%,rgba(150,110,245,0.45)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(70%_55%_at_50%_62%,rgba(255,255,255,0.10)_0%,transparent_70%)]" />
 
       {/* Back of the folder, with its tab on the right */}
       <svg viewBox="0 0 200 210" className="absolute inset-0 h-full w-full" aria-hidden="true">
         <path
           d="M12,102 Q12,94 20,94 L120,94 Q126,94 130,90 L134,86 Q137,84 142,84 L178,84 Q188,84 188,94 L188,194 Q188,202 180,202 L20,202 Q12,202 12,194 Z"
-          fill="#35197A"
+          fill="#2C2C2E"
         />
       </svg>
 
@@ -57,7 +57,7 @@ function FolderThumb({ posts }: { posts: GalleryItem[] }) {
         className={`absolute left-[10%] right-[10%] top-[6%] grid grid-cols-3 gap-[3px] overflow-hidden rounded-[10px] shadow-[0_20px_40px_-12px_rgba(0,0,0,0.6)] motion-safe:transition-transform motion-safe:duration-700 ${EASE} group-hover:-translate-y-2`}
       >
         {posts.map((post) => (
-          <div key={post.src} className="relative aspect-[4/5] bg-[#2A1560]">
+          <div key={post.src} className="relative aspect-[4/5] bg-[#1D1D1F]">
             <Image
               src={post.src as string}
               alt=""
@@ -74,13 +74,13 @@ function FolderThumb({ posts }: { posts: GalleryItem[] }) {
       <svg viewBox="0 0 200 210" className="absolute inset-0 h-full w-full" aria-hidden="true">
         <defs>
           <linearGradient id={`front-${uid}`} x1="0" y1="0" x2="0.35" y2="1">
-            <stop offset="0%" stopColor="#8A5CF0" />
-            <stop offset="55%" stopColor="#5B34C4" />
-            <stop offset="100%" stopColor="#2E1570" />
+            <stop offset="0%" stopColor="#6E6E73" />
+            <stop offset="55%" stopColor="#48484A" />
+            <stop offset="100%" stopColor="#1D1D1F" />
           </linearGradient>
           <radialGradient id={`shine-${uid}`} cx="0.3" cy="0.55" r="0.7">
-            <stop offset="0%" stopColor="#E3D5FF" stopOpacity="0.35" />
-            <stop offset="100%" stopColor="#E3D5FF" stopOpacity="0" />
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
           </radialGradient>
         </defs>
         <path
@@ -134,7 +134,7 @@ function Card({ project, index }: { project: Project; index: number }) {
           </span>
 
           {/* Soft fade so the text reads on any image */}
-          {!isFolder && <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#2B1760]/45 to-transparent" />}
+          {!isFolder && <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#1D1D1F]/45 to-transparent" />}
 
           {/* Project name + category — text only */}
           <div className={`absolute bottom-6 left-6 right-6 text-white md:bottom-7 md:left-7 motion-safe:transition-transform motion-safe:duration-500 ${EASE} group-hover:-translate-y-1`}>
@@ -177,7 +177,7 @@ export default function Work() {
   };
 
   const btn =
-    "flex h-12 w-12 items-center justify-center rounded-full bg-[#F5F4F7] text-black outline-none motion-safe:transition-colors motion-safe:duration-300 hover:bg-black hover:text-white focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-35";
+    "flex h-12 w-12 items-center justify-center rounded-full bg-[#F5F5F7] text-black outline-none motion-safe:transition-colors motion-safe:duration-300 hover:bg-black hover:text-white focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-35";
 
   return (
     <section id="work" className="relative py-20 text-black md:py-28 lg:py-32">

@@ -106,13 +106,13 @@ export default function Header() {
 
           {/* Desktop nav: soft pill group in the centre */}
           <nav aria-label="Primary" className="hidden md:block">
-            <ul className="flex items-center gap-1 rounded-full bg-white/80 p-1 shadow-[0_8px_24px_-14px_rgba(40,20,90,0.35)] ring-1 ring-black/[0.05] backdrop-blur-md">
+            <ul className="flex items-center gap-1 rounded-full bg-white/80 p-1 shadow-[0_8px_24px_-14px_rgba(0,0,0,0.35)] ring-1 ring-black/[0.05] backdrop-blur-md">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
                     onClick={(e) => go(e, item.href)}
-                    className="flex h-10 items-center rounded-full px-5 text-[14px] font-medium tracking-[-0.01em] text-black/70 outline-none motion-safe:transition-colors motion-safe:duration-300 hover:bg-[#F1EDF6] hover:text-black focus-visible:bg-[#F1EDF6] focus-visible:text-black"
+                    className="flex h-10 items-center rounded-full px-5 text-[14px] font-medium tracking-[-0.01em] text-black/70 outline-none motion-safe:transition-colors motion-safe:duration-300 hover:bg-[#F5F5F7] hover:text-black focus-visible:bg-[#F5F5F7] focus-visible:text-black"
                   >
                     {item.label}
                   </a>
@@ -172,7 +172,7 @@ export default function Header() {
                   href={item.href}
                   tabIndex={open ? 0 : -1}
                   onClick={(e) => go(e, item.href)}
-                  className="flex items-center justify-between rounded-[20px] bg-[#F5F4F7] px-5 py-5 text-black active:bg-[#F1EDF6]"
+                  className="flex items-center justify-between rounded-[20px] bg-[#F5F5F7] px-5 py-5 text-black active:bg-[#F5F5F7]"
                 >
                   <span className="text-[26px] font-medium leading-none tracking-[-0.03em]">{item.label}</span>
                   <ArrowUpRight className="h-4 w-4 rotate-45 text-neutral-400" />

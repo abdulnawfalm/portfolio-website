@@ -32,7 +32,7 @@ function ArrowUpRight({ className = "" }: { className?: string }) {
 }
 
 const inputBase =
-  "w-full rounded-[14px] bg-[#F5F4F7] px-4 py-3.5 text-[16px] text-black outline-none placeholder:text-neutral-400 motion-safe:transition-shadow motion-safe:duration-200 focus:bg-white focus:ring-2 focus:ring-black aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-500";
+  "w-full rounded-[14px] bg-[#F5F5F7] px-4 py-3.5 text-[16px] text-black outline-none placeholder:text-neutral-400 motion-safe:transition-shadow motion-safe:duration-200 focus:bg-white focus:ring-2 focus:ring-black aria-[invalid=true]:ring-2 aria-[invalid=true]:ring-red-500";
 
 function Field({ label, required, children, hint }: { label: string; required?: boolean; children: React.ReactNode; hint?: string }) {
   return (
@@ -113,7 +113,7 @@ export default function ContactForm() {
       <div className="mx-auto grid w-full max-w-[1200px] grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
         {/* ── Left: intro + details ───────────────────── */}
         <aside className="lg:col-span-5">
-          <p className="inline-flex items-center gap-2 rounded-full bg-[#F1EDF6] px-3 py-1.5 text-[13px] font-medium text-black">
+          <p className="inline-flex items-center gap-2 rounded-full bg-[#F5F5F7] px-3 py-1.5 text-[13px] font-medium text-black">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60 motion-safe:animate-ping" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -152,7 +152,7 @@ export default function ContactForm() {
 
         {/* ── Right: form ─────────────────────────────── */}
         <div className="lg:col-span-7">
-          <div className="rounded-[28px] bg-white p-6 shadow-[0_30px_80px_-40px_rgba(40,20,90,0.25)] ring-1 ring-black/[0.06] md:p-10">
+          <div className="rounded-[28px] bg-white p-6 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.25)] ring-1 ring-black/[0.06] md:p-10">
             {status === "sent" ? (
               <div className="flex min-h-[420px] flex-col items-start justify-center">
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-white">

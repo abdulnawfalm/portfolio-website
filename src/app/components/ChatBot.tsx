@@ -147,13 +147,13 @@ export default function ChatBot() {
         role="dialog"
         aria-label="Ask about Abdul Nawfal"
         aria-hidden={!open}
-        className={`fixed inset-0 z-[70] flex flex-col bg-white text-black motion-safe:transition-[opacity,transform] motion-safe:duration-300 ${EASE} md:inset-auto md:bottom-[104px] md:right-8 md:h-[min(500px,calc(100dvh-140px))] md:w-[340px] md:overflow-hidden md:rounded-[24px] md:shadow-[0_30px_80px_-30px_rgba(40,20,90,0.35)] md:ring-1 md:ring-black/[0.06] ${
+        className={`fixed inset-0 z-[70] flex flex-col bg-white text-black motion-safe:transition-[opacity,transform] motion-safe:duration-300 ${EASE} md:inset-auto md:bottom-[104px] md:right-8 md:h-[min(500px,calc(100dvh-140px))] md:w-[340px] md:overflow-hidden md:rounded-[24px] md:shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)] md:ring-1 md:ring-black/[0.06] ${
           open ? "visible translate-y-0 opacity-100" : "invisible translate-y-3 opacity-0"
         }`}
       >
         {/* Header */}
-        <div className="flex items-start gap-3 bg-[linear-gradient(180deg,#F1EDF6_0%,#FFFFFF_100%)] px-4 pb-3 pt-[max(1rem,env(safe-area-inset-top))]">
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#2A1560] text-white">
+        <div className="flex items-start gap-3 bg-[linear-gradient(180deg,#F5F5F7_0%,#FFFFFF_100%)] px-4 pb-3 pt-[max(1rem,env(safe-area-inset-top))]">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#1D1D1F] text-white">
             <Sparkle className="h-4 w-4" />
           </span>
           <div className="min-w-0 flex-1 leading-tight">
@@ -172,7 +172,7 @@ export default function ChatBot() {
             onClick={close}
             tabIndex={open ? 0 : -1}
             aria-label="Close chat"
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F5F4F7] text-black outline-none motion-safe:transition-colors hover:bg-black hover:text-white focus-visible:ring-2 focus-visible:ring-black"
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F5F5F7] text-black outline-none motion-safe:transition-colors hover:bg-black hover:text-white focus-visible:ring-2 focus-visible:ring-black"
           >
             <CloseIcon className="h-3 w-3" />
           </button>
@@ -195,7 +195,7 @@ export default function ChatBot() {
             ) : (
               <div
                 key={m.id}
-                className="w-fit max-w-[90%] rounded-[16px] rounded-bl-[6px] bg-[#F5F4F7] px-3.5 py-2.5 text-[14px] leading-[1.55] text-black"
+                className="w-fit max-w-[90%] rounded-[16px] rounded-bl-[6px] bg-[#F5F5F7] px-3.5 py-2.5 text-[14px] leading-[1.55] text-black"
               >
                 {m.answer.text}
 
@@ -234,7 +234,7 @@ export default function ChatBot() {
 
           {/* Typing dots */}
           {typing && (
-            <div className="flex w-fit items-center gap-1 rounded-[18px] rounded-bl-[6px] bg-[#F5F4F7] px-4 py-3.5" aria-hidden="true">
+            <div className="flex w-fit items-center gap-1 rounded-[18px] rounded-bl-[6px] bg-[#F5F5F7] px-4 py-3.5" aria-hidden="true">
               {[0, 1, 2].map((i) => (
                 <span
                   key={i}
@@ -255,7 +255,7 @@ export default function ChatBot() {
               onClick={() => ask(prompt.question)}
               disabled={typing}
               tabIndex={open ? 0 : -1}
-              className="rounded-full bg-[#F1EDF6] px-2.5 py-1.5 text-[11.5px] font-medium capitalize text-black outline-none motion-safe:transition-colors motion-safe:duration-200 hover:bg-black hover:text-white focus-visible:ring-2 focus-visible:ring-black disabled:opacity-50"
+              className="rounded-full bg-[#F5F5F7] px-2.5 py-1.5 text-[11.5px] font-medium capitalize text-black outline-none motion-safe:transition-colors motion-safe:duration-200 hover:bg-black hover:text-white focus-visible:ring-2 focus-visible:ring-black disabled:opacity-50"
             >
               {prompt.label.trim()}
             </button>
@@ -270,7 +270,7 @@ export default function ChatBot() {
           }}
           className="px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-1"
         >
-          <div className="flex items-center gap-2 rounded-full bg-[#F5F4F7] p-1 pl-4 motion-safe:transition-colors focus-within:bg-[#EFEBF6]">
+          <div className="flex items-center gap-2 rounded-full bg-[#F5F5F7] p-1 pl-4 motion-safe:transition-colors focus-within:bg-[#E8E8ED]">
             <input
               ref={inputRef}
               value={input}
@@ -302,18 +302,18 @@ export default function ChatBot() {
         aria-expanded={open}
         aria-controls="chat-panel"
         aria-label={open ? "Close chat" : "Ask about me"}
-        className={`group fixed bottom-5 right-5 z-[60] h-[52px] items-center gap-2.5 rounded-full bg-[#F1EDF6]/90 pl-1.5 text-[14px] font-medium text-black shadow-[0_18px_40px_-14px_rgba(60,30,140,0.55)] outline-none ring-1 ring-white/70 backdrop-blur-xl motion-safe:transition-colors motion-safe:duration-300 hover:bg-black hover:text-white md:bottom-8 md:right-8 ${
+        className={`group fixed bottom-5 right-5 z-[60] h-[52px] items-center gap-2.5 rounded-full bg-[#F5F5F7]/90 pl-1.5 text-[14px] font-medium text-black shadow-[0_18px_40px_-14px_rgba(0,0,0,0.55)] outline-none ring-1 ring-white/70 backdrop-blur-xl motion-safe:transition-colors motion-safe:duration-300 hover:bg-black hover:text-white md:bottom-8 md:right-8 ${
           open ? "hidden pr-1.5 md:flex" : "flex pr-5"
         }`}
       >
-        <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[linear-gradient(145deg,#6A45DB_0%,#2A1560_100%)] text-white">
+        <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#1D1D1F] text-white">
           {open ? (
             <CloseIcon className="h-3 w-3" />
           ) : (
             <>
               <Sparkle className={`h-[18px] w-[18px] motion-safe:transition-transform motion-safe:duration-500 ${EASE} group-hover:rotate-12`} />
               {/* Online dot */}
-              <span className="absolute -right-0.5 -top-0.5 flex h-3 w-3 items-center justify-center rounded-full bg-[#F1EDF6] group-hover:bg-black">
+              <span className="absolute -right-0.5 -top-0.5 flex h-3 w-3 items-center justify-center rounded-full bg-[#F5F5F7] group-hover:bg-black">
                 <span className="h-2 w-2 rounded-full bg-emerald-500" />
               </span>
             </>

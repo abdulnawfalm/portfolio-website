@@ -6,9 +6,9 @@
   /* ── Hero background colours (swap these for your own) ── */
   --hero-grid-line: #ecebf2;   /* grid lines */
   --hero-grid-size: 52px;      /* size of each square */
-  --hero-top-tint: #f6effd;    /* soft wash along the top edge */
-  --hero-glow-1: #dccbf8;      /* main glow, bottom-left */
-  --hero-glow-2: #efe3f8;      /* secondary glow, bottom-right */
+  --hero-top-tint: #ffffff;    /* soft wash along the top edge */
+  --hero-glow-1: #ffffff;      /* main glow, bottom-left */
+  --hero-glow-2: #ffffff;      /* secondary glow, bottom-right */
   --foreground: #0a0a0a;
   --muted: #a3a3a3;
   --border: #e5e5e2;

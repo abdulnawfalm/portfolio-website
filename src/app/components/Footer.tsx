@@ -101,10 +101,6 @@ export default function Footer() {
   return (
     <footer id="contact" className="relative isolate overflow-hidden px-5 pt-24 text-black md:px-10 md:pt-32 lg:px-16 lg:pt-40">
       {/* Soft lavender glow at the bottom — echoes the hero */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[70%] bg-[radial-gradient(60%_60%_at_30%_100%,#E6DAFA_0%,transparent_70%),radial-gradient(50%_50%_at_85%_100%,#F1E7F9_0%,transparent_70%)]"
-      />
 
       <div className="mx-auto w-full max-w-[1200px]">
         {/* ── Call to action ─────────────────────────────── */}

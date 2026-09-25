@@ -199,7 +199,7 @@ export default async function CaseStudyPage({
                     {cs.gallery.map((g, i) => (
                       <figure
                         key={i}
-                        className={`relative break-inside-avoid overflow-hidden rounded-[20px] bg-[#F1EDF6] ${
+                        className={`relative break-inside-avoid overflow-hidden rounded-[20px] bg-[#F5F5F7] ${
                           g.shape === "portrait"
                             ? "aspect-[4/5]"
                             : g.shape === "landscape"
@@ -216,7 +216,7 @@ export default async function CaseStudyPage({
                             className="object-cover"
                           />
                         ) : (
-                          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(160deg,#F3EEFB_0%,#E2D6F7_100%)] text-[13px] font-medium text-black/35">
+                          <div className="flex h-full w-full items-center justify-center bg-[#F5F5F7] text-[13px] font-medium text-black/35">
                             {g.alt}
                           </div>
                         )}
@@ -232,7 +232,7 @@ export default async function CaseStudyPage({
                     {cs.whatIDid.map((item, i) => (
                       <li
                         key={i}
-                        className="flex gap-4 rounded-[20px] bg-[#F5F4F7] p-5 md:p-6"
+                        className="flex gap-4 rounded-[20px] bg-[#F5F5F7] p-5 md:p-6"
                       >
                         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[13px] font-semibold tabular-nums text-black">
                           {String(i + 1).padStart(2, "0")}
@@ -267,7 +267,7 @@ export default async function CaseStudyPage({
                   {cs.tags.map((t) => (
                     <li
                       key={t}
-                      className="rounded-full bg-[#F1EDF6] px-4 py-2 text-[14px] font-medium text-black"
+                      className="rounded-full bg-[#F5F5F7] px-4 py-2 text-[14px] font-medium text-black"
                     >
                       {t}
                     </li>
@@ -288,7 +288,7 @@ export default async function CaseStudyPage({
         <div className="px-5 pb-20 md:px-10 md:pb-28 lg:px-16">
           <Link
             href={`/work/${next.slug}`}
-            className="group mx-auto flex w-full max-w-[1200px] items-center justify-between gap-6 rounded-[28px] bg-[linear-gradient(135deg,#F3EEFB_0%,#E4D8F8_60%,#D5C4F5_100%)] p-8 outline-none focus-visible:ring-2 focus-visible:ring-black md:rounded-[36px] md:p-12"
+            className="group mx-auto flex w-full max-w-[1200px] items-center justify-between gap-6 rounded-[28px] bg-[#F5F5F7] p-8 outline-none focus-visible:ring-2 focus-visible:ring-black md:rounded-[36px] md:p-12"
           >
             <span className="min-w-0">
               <span className="block text-[13px] font-medium uppercase tracking-[0.1em] text-black/50">

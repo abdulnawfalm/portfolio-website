@@ -46,7 +46,7 @@ function StarIcon({ className = "" }: { className?: string }) {
 /* 1 — Review: quiet text card */
 function ReviewCard() {
   return (
-    <figure className={`${CARD} justify-between bg-[#F5F4F7]`}>
+    <figure className={`${CARD} justify-between bg-[#F5F5F7]`}>
       <div>
         <p className="text-[12px] font-medium uppercase tracking-[0.1em] text-neutral-400">Team lead review</p>
         <blockquote className="mt-6 text-pretty text-[16px] leading-[1.65] text-black md:text-[17px]">
@@ -70,7 +70,7 @@ function ReviewCard() {
 /* 2 — Award: text on top, a tilted award plaque peeking up from the bottom */
 function AwardCard() {
   return (
-    <article className={`${CARD} bg-[#F1EDF6]`}>
+    <article className={`${CARD} bg-[#F5F5F7]`}>
       <div className="flex items-center gap-2 text-[12px] font-medium uppercase tracking-[0.1em] text-neutral-500">
         <StarIcon className="h-3.5 w-3.5 text-black" />
         Award
@@ -102,21 +102,21 @@ function CertCard() {
   const linkProps = CERT.link ? { href: CERT.link, target: "_blank", rel: "noopener noreferrer" } : {};
 
   return (
-    <Wrapper {...linkProps} className={`${CARD} justify-between bg-[#EEF1F4] outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4`}>
+    <Wrapper {...linkProps} className={`${CARD} justify-between bg-[#F5F5F7] outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4`}>
       {/* Soft glow behind the sheet */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full bg-[radial-gradient(circle,#DCCBF8_0%,transparent_70%)] opacity-80"
+        className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full hidden"
       />
 
       {/* Certificate sheet — lifts and turns slightly on hover */}
       <div
         aria-hidden="true"
-        className={`relative mx-auto mt-2 w-[78%] rotate-[3deg] rounded-[14px] bg-white p-5 shadow-[0_24px_48px_-24px_rgba(20,10,60,0.35)] motion-safe:transition-transform motion-safe:duration-700 ${EASE} group-hover:-translate-y-2 group-hover:rotate-[-2deg]`}
+        className={`relative mx-auto mt-2 w-[78%] rotate-[3deg] rounded-[14px] bg-white p-5 shadow-[0_24px_48px_-24px_rgba(0,0,0,0.35)] motion-safe:transition-transform motion-safe:duration-700 ${EASE} group-hover:-translate-y-2 group-hover:rotate-[-2deg]`}
       >
         <div className="flex items-start justify-between">
           <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-neutral-400">Certificate</span>
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#F1EDF6] text-black">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#F5F5F7] text-black">
             <StarIcon className="h-3.5 w-3.5" />
           </span>
         </div>

@@ -79,7 +79,7 @@ function CtaButton({
     <a
       {...props}
       className={`group inline-flex h-14 items-center justify-between gap-4 rounded-full pl-6 pr-1.5 text-[15px] font-medium outline-none motion-safe:transition-colors motion-safe:duration-300 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 ${
-        dark ? "bg-black text-white hover:bg-neutral-800" : "bg-[#F1EDF6] text-black hover:bg-[#E8E1F3]"
+        dark ? "bg-black text-white hover:bg-neutral-800" : "bg-[#F5F5F7] text-black hover:bg-[#E8E8ED]"
       }`}
     >
       <span className={`whitespace-nowrap ${move} group-hover:translate-x-1 group-focus-visible:translate-x-1`}>{label}</span>
@@ -179,7 +179,7 @@ export default function Hero() {
       <div className="mx-auto w-full max-w-[1200px]">
         {/* Availability badge, same style as the contact page */}
         <div style={fade(100).style} className={`${fade(100).className} flex flex-wrap items-center gap-3`}>
-          <p className="inline-flex items-center gap-2 rounded-full bg-[#F1EDF6] px-3 py-1.5 text-[13px] font-medium text-black">
+          <p className="inline-flex items-center gap-2 rounded-full bg-[#F5F5F7] px-3 py-1.5 text-[13px] font-medium text-black">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60 motion-safe:animate-ping" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
