@@ -46,7 +46,7 @@ export type GalleryItem = {
 export const projects: Project[] = [
   {
     slug: "yourofficeship",
-    title: "YourOfficeShip",
+    title: "Ship Chartering",
     client: "Hilfship",
     category: "SaaS Platform",
     year: "2026",
@@ -85,7 +85,7 @@ export const projects: Project[] = [
   },
   {
     slug: "ezone-hr-dashboard",
-    title: "EZONE HR Dashboard",
+    title: "Your Office HR",
     client: "EZONE Corporate Services",
     category: "Dashboard Redesign",
     year: "2025",
