@@ -29,19 +29,13 @@ export default function Tools() {
         <h2 className="text-[clamp(38px,4.4vw,68px)] font-medium leading-[1.05] tracking-[-0.04em]">
           Tools <span className="text-neutral-400">I use</span>
         </h2>
-
-        {/*
-          Grid with lines only BETWEEN cells — no outer border, no rounded corners.
-          Every cell draws a left + top line; the list is pulled 1px up and left
-          inside a clipped wrapper, which hides the lines on the outside edges.
-          2 columns on phones, 3 on tablets, 4 on desktop.
-        */}
+        {/* Tool grid: 2 columns on phones, 3 on tablets, 4 on desktop */}
         <div className="mt-12 overflow-hidden md:mt-16">
-          <ul className="-ml-px -mt-px grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {TOOLS.map((tool) => (
               <li
                 key={tool.name}
-                className="group flex h-[150px] flex-col items-center justify-center gap-4 border-l border-t border-black/[0.08] px-3 text-center motion-safe:transition-colors motion-safe:duration-300 hover:bg-[#F5F5F7] md:h-[190px] lg:h-[210px]"
+                className="group flex h-[150px] flex-col items-center justify-center gap-4 rounded-[24px] px-3 text-center motion-safe:transition-colors motion-safe:duration-300 hover:bg-[#F5F5F7] md:h-[190px] lg:h-[210px]"
               >
                 <span
                   className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-[14px] bg-[#F5F5F7] text-[15px] font-semibold tracking-[-0.02em] text-black motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 md:h-14 md:w-14 md:text-[16px]"
