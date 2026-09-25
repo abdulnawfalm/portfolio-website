@@ -11,7 +11,7 @@ const AWARD = {
   title: "Employee of the Month",
   org: "Your Office Partners",
   date: "Month 2025",
-  detail: "Recognised for outstanding design work and ownership across the product team.",
+  detail: "Congratulations on Employee of the Month! Your creativity and dedication to great design truly stand out, and your ownership of every project doesn't go unnoticed. Well deserved!",
 };
 
 const CERT = {
