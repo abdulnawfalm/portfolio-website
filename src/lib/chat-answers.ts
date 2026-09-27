@@ -7,7 +7,7 @@ export type Answer = {
 };
 
 /** One resume, used for every application. Lives in /public. */
-export const RESUME = "/Abdul_Nawfal_UIUX_Designer.pdf";
+export const RESUME = "/Abdul_Nawfal_UIUX_Designer_Resume.pdf";
 
 /** Short label on the chip, full question sent to the answer engine */
 export const QUICK_PROMPTS: { label: string; question: string }[] = [
@@ -27,7 +27,7 @@ export const ANSWERS: Answer[] = [
   {
     match: ["resume", "resumé", "cv", "download", "curriculum", "profile pdf"],
     text: "Here it is.",
-    links: [{ label: "Download resume", href: RESUME, download: true }],
+    links: [{ label: "Download Resume", href: RESUME, download: true }],
   },
   {
     match: ["relocate", "relocation", "relocating", "move", "moving", "shift", "dubai", "uae", "emirates", "abroad", "overseas", "visa", "sponsor", "onsite", "on-site", "bangalore", "bengaluru", "india", "chennai"],

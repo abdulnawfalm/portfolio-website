@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 /* ── Edit these ─────────────────────────────────────────── */
 const LINKEDIN_URL = "https://www.linkedin.com/in/abdulnawfal/";
-const RESUME_URL = "/resume.pdf"; // put your file in /public/resume.pdf
-const RESUME_FILENAME = "Abdul-Nawfal-Resume.pdf"; // name the visitor's download gets
+const RESUME_URL = "/Abdul_Nawfal_UIUX_Designer_Resume.pdf"; // the file lives in /public
+const RESUME_FILENAME = "Abdul_Nawfal_UIUX_Designer_Resume.pdf"; // name the visitor's download gets
 
 const SKILLS = [
   "UI/UX Design",
@@ -220,7 +220,7 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <CtaButton label="Download resume" variant="dark" icon="down" href={RESUME_URL} download={RESUME_FILENAME} />
+            <CtaButton label="Download Resume" variant="dark" icon="down" href={RESUME_URL} download={RESUME_FILENAME} />
             <CtaButton
               label="LinkedIn"
               variant="light"
