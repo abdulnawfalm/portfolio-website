@@ -8,7 +8,7 @@ import { useEffect, useId, useRef, useState } from "react";
 //  • portrait.jpg — normal photo: fills the panel (its own background covers the stripes)
 const PHOTO_SOURCES = ["/portrait.png", "/portrait.jpg"];
 // Where your face sits across the photo (0–100). 50 = centre. Adjust if your new photo looks off-centre.
-const PHOTO_FACE_X = 38;
+const PHOTO_FACE_X = 50;
 const FIRST_NAME = "Abdul";
 const LAST_NAME = "Nawfal"; // second line under the first name
 const POSITION = "UI/UX & Product Designer";
@@ -120,7 +120,7 @@ function ProfileCard() {
               style={isCutout ? { transform: `translateX(-${PHOTO_FACE_X}%)` } : undefined}
               className={
                 isCutout
-                  ? "absolute -bottom-[2%] left-1/2 z-[1] h-[90%] w-auto max-w-none object-contain"
+                  ? "absolute bottom-0 left-1/2 z-[1] h-[80%] w-auto max-w-none object-contain"
                   : "absolute inset-0 z-[1] h-full w-full object-cover object-[50%_25%]"
               }
             />
