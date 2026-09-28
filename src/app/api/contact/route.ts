@@ -100,7 +100,7 @@ export async function POST(request: Request) {
     });
 
     const subject = `Portfolio enquiry from ${name}${company ? `, ${company}` : ""}`;
-    const received = new Date().toLocaleString("en-GB", { timeZone: "Asia/Dubai", dateStyle: "medium", timeStyle: "short" });
+    const received = new Date().toLocaleString("en-GB", { timeZone: "Asia/Kolkata", dateStyle: "medium", timeStyle: "short" });
 
     await transporter.sendMail({
       from: { name: "Portfolio contact form", address: user },
@@ -111,7 +111,7 @@ export async function POST(request: Request) {
         `Name: ${name}`,
         `Email: ${email}`,
         ...(company ? [`Company: ${company}`] : []),
-        `Received: ${received} (Dubai time)`,
+        `Received: ${received} (India time)`,
         "",
         message,
       ].join("\n"),
@@ -119,7 +119,7 @@ export async function POST(request: Request) {
         <div style="font-family:Inter,Arial,sans-serif;font-size:15px;line-height:1.6;color:#111">
           <p style="margin:0 0 4px"><strong>${escapeHtml(name)}</strong> &lt;${escapeHtml(email)}&gt;</p>
           ${company ? `<p style="margin:0 0 4px;color:#555">${escapeHtml(company)}</p>` : ""}
-          <p style="margin:0 0 16px;color:#999;font-size:13px">${escapeHtml(received)} (Dubai time)</p>
+          <p style="margin:0 0 16px;color:#999;font-size:13px">${escapeHtml(received)} (India time)</p>
           <p style="margin:0;white-space:pre-wrap">${escapeHtml(message)}</p>
         </div>`,
     });

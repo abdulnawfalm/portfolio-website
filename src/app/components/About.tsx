@@ -13,7 +13,7 @@ const FIRST_NAME = "Abdul";
 const LAST_NAME = "Nawfal"; // second line under the first name
 const POSITION = "UI/UX & Product Designer";
 const EXPERIENCE = "2.5 yrs";
-const LOCATION = "Dubai, UAE";
+const LOCATION = "Thanjavur, India";
 const MONOGRAM = "AN";
 
 // The heading is split in two: the first part is black, the second part grey

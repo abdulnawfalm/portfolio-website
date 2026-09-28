@@ -32,7 +32,7 @@ export const ANSWERS: Answer[] = [
   {
     match: ["relocate", "relocation", "relocating", "move", "moving", "shift", "dubai", "uae", "emirates", "abroad", "overseas", "visa", "sponsor", "onsite", "on-site", "bangalore", "bengaluru", "india", "chennai"],
     text:
-      "Based in Dubai, UAE, and ready to join on-site. Current visa status: Visit visa.",
+      "Based in Thanjavur, India, and ready to join on-site.",
   },
   {
     match: ["experience", "experienced", "years", "year", "yrs", "how long", "senior", "junior", "level", "background", "career", "worked"],
@@ -42,7 +42,7 @@ export const ANSWERS: Answer[] = [
   {
     match: ["available", "availability", "free", "full time", "full-time", "fulltime", "part time", "hire", "hiring", "join", "start", "notice", "period", "open to", "on-site", "onsite", "office"],
     text:
-      "Yes, looking for a full-time UI/UX Designer or Product Designer role, on-site and working from the office. Open to positions in Dubai, UAE, and available immediately. Current visa status: Visit visa.",
+      "Yes, looking for a full-time UI/UX Designer or Product Designer role, on-site and working from the office. Open to new positions and available immediately.",
     links: [{ label: "Get in touch", href: "/contact" }],
   },
   {
@@ -70,7 +70,7 @@ export const ANSWERS: Answer[] = [
   {
     match: ["location", "located", "based", "where", "live", "city", "country", "chennai", "india", "timezone", "time zone"],
     text:
-      "Based in Dubai, UAE. Current visa status: Visit visa.",
+      "Based in Thanjavur, India.",
   },
 ];
 
@@ -83,7 +83,7 @@ ANSWERS.push(
   {
     match: ["who", "about", "tell me", "introduce", "yourself", "himself", "bio"],
     text:
-      "Abdul Nawfal is a UI/UX and Product Designer based in Dubai, UAE, with 2.5 years of experience and 20+ projects shipped. He designs interfaces and builds them in React and Next.js, and he's open to full-time roles in the UAE. Current visa status: Visit visa.",
+      "Abdul Nawfal is a UI/UX and Product Designer based in Thanjavur, India, with 2.5 years of experience and 20+ projects shipped. He designs interfaces and builds them in React and Next.js, and he's open to full-time roles.",
     links: [{ label: "See the work", href: "/#work" }],
   },
 );

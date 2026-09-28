@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 const EMAIL = "abdulnawfal11011@gmail.com"; // ← your email
 const NAME = "Abdul Nawfal";
 const WORDMARK = "DESIGNER"; // big word at the bottom — matches your header logo
-const LOCATION = "Dubai, UAE";
-const TIME_ZONE = "Asia/Dubai";
+const LOCATION = "Thanjavur, India";
+const TIME_ZONE = "Asia/Kolkata";
 
 /** Opens a new Gmail message addressed to you, in a new tab */
 const GMAIL_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}&su=${encodeURIComponent("Hello Abdul")}`;
@@ -55,7 +55,7 @@ function ArrowUp({ className = "" }: { className?: string }) {
   );
 }
 
-/** Live local time in Dubai, updated every 20 seconds (shown after the page loads to avoid a mismatch) */
+/** Live local time at your location, updated every 20 seconds (shown after the page loads to avoid a mismatch) */
 function LocalTime() {
   const [time, setTime] = useState<string | null>(null);
 

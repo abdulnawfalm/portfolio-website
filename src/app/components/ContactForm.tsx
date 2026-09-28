@@ -5,8 +5,7 @@ import { useState } from "react";
 /* ── Edit these ─────────────────────────────────────────── */
 const EMAIL = "abdulnawfal11011@gmail.com"; // ← your email
 const AVAILABILITY = "Open to full-time roles"; // e.g. "Open to full-time & contract roles"
-const VISA_STATUS = "Visit visa"; // your current visa status
-const PHONE = "+971 50 123 4567"; // ← placeholder — replace with your UAE number
+const PHONE = "+91 81221 29168";
 const RESPONSE_TIME = "Usually within 24 hours"; // how fast you reply
 
 /**
@@ -131,10 +130,6 @@ export default function ContactForm() {
 
           {/* Details */}
           <dl className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
-            <div>
-              <dt className="text-[12px] font-medium uppercase tracking-[0.1em] text-neutral-400">Visa status</dt>
-              <dd className="mt-1.5 text-[17px] font-medium">{VISA_STATUS}</dd>
-            </div>
             <div>
               <dt className="text-[12px] font-medium uppercase tracking-[0.1em] text-neutral-400">Phone</dt>
               <dd className="mt-1.5">
