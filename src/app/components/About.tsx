@@ -120,7 +120,7 @@ function ProfileCard() {
               style={isCutout ? { transform: `translateX(-${PHOTO_FACE_X}%)` } : undefined}
               className={
                 isCutout
-                  ? "absolute bottom-0 left-1/2 z-[1] h-[92%] w-auto max-w-none object-contain"
+                  ? "absolute bottom-0 left-1/2 z-[1] h-[84%] w-auto max-w-none object-contain [mask-image:linear-gradient(to_right,transparent_0%,black_14%,black_86%,transparent_100%)]"
                   : "absolute inset-0 z-[1] h-full w-full object-cover object-[50%_25%]"
               }
             />
