@@ -55,7 +55,7 @@ function ArrowUp({ className = "" }: { className?: string }) {
   );
 }
 
-/** Live local time at your location, updated every 20 seconds (shown after the page loads to avoid a mismatch) */
+/** Live Chennai time (India Standard Time), updated every 20 seconds (shown after the page loads to avoid a mismatch) */
 function LocalTime() {
   const [time, setTime] = useState<string | null>(null);
 
@@ -73,7 +73,7 @@ function LocalTime() {
         <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60 motion-safe:animate-ping" />
         <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
       </span>
-      {time ?? "--:--"} local time
+      {time ?? "--:--"} Chennai time (IST)
     </span>
   );
 }

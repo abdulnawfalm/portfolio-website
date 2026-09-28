@@ -20,6 +20,7 @@ const ROTATE_EVERY_MS = 2200;
 
 const AVAILABILITY = "Open to full-time roles";
 const LOCATION = "Thanjavur, India";
+const RELOCATE = "Willing to relocate: Chennai / Bangalore";
 const INTRO =
   "I design and build digital experiences from idea to interface, combining product thinking, UI/UX design, prototyping and front end development to create functional, user focused products.";
 /* ───────────────────────────────────────────────────────── */
@@ -185,6 +186,14 @@ export default function Hero() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
             {AVAILABILITY}
+          </p>
+          {/* Relocation badge */}
+          <p className="inline-flex items-center gap-2 rounded-full bg-[#F5F5F7] px-3 py-1.5 text-[13px] font-medium text-black">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5 text-neutral-500" aria-hidden="true">
+              <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" />
+              <circle cx="12" cy="9.5" r="2.5" />
+            </svg>
+            {RELOCATE}
           </p>
           <span className="text-[13px] font-medium text-neutral-500">{LOCATION}</span>
         </div>
