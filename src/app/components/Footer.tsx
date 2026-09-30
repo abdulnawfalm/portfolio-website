@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const EMAIL = "abdulnawfal11011@gmail.com"; // ← your email
 const NAME = "Abdul Nawfal";
 const WORDMARK = "DESIGNER"; // big word at the bottom — matches your header logo
-const LOCATION = "Thanjavur, India";
+const LOCATION = "Chennai, India";
 const TIME_ZONE = "Asia/Kolkata";
 
 /** Opens a new Gmail message addressed to you, in a new tab */

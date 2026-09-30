@@ -19,8 +19,7 @@ const SKILLS = [
 const ROTATE_EVERY_MS = 2200;
 
 const AVAILABILITY = "Open to full-time roles";
-const LOCATION = "Thanjavur, India";
-const RELOCATE = "Willing to relocate: Chennai / Bangalore";
+const RELOCATE = "Willing to relocate to the UAE";
 const INTRO =
   "I design and build digital experiences from idea to interface, combining product thinking, UI/UX design, prototyping and front end development to create functional, user focused products.";
 /* ───────────────────────────────────────────────────────── */
@@ -196,7 +195,6 @@ export default function Hero() {
             </svg>
             {RELOCATE}
           </p>
-          <span className="text-[13px] font-medium text-neutral-500">{LOCATION}</span>
         </div>
 
         {/* Title */}
