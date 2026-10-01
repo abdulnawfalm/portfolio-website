@@ -200,7 +200,7 @@ export default function Header() {
 
         <div className="mt-auto flex items-center justify-between pt-10 text-[13px] font-medium text-neutral-500">
           <span>© {new Date().getFullYear()} Abdul Nawfal</span>
-          <span>Chennai, India</span>
+          <span>Thanjavur, India</span>
         </div>
       </div>
     </header>
