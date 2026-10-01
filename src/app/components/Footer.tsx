@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const EMAIL = "abdulnawfal11011@gmail.com"; // ← your email
 const NAME = "Abdul Nawfal";
 const WORDMARK = "DESIGNER"; // big word at the bottom — matches your header logo
-const LOCATION = "Thanjavur, India";
+const LOCATION = "Chennai, India";
 const TIME_ZONE = "Asia/Kolkata";
 
 /** Opens a new Gmail message addressed to you, in a new tab */
@@ -55,7 +55,7 @@ function ArrowUp({ className = "" }: { className?: string }) {
   );
 }
 
-/** Live India time (IST), updated every 20 seconds (shown after the page loads to avoid a mismatch) */
+/** Live Chennai time (IST), updated every 20 seconds (shown after the page loads to avoid a mismatch) */
 function LocalTime() {
   const [time, setTime] = useState<string | null>(null);
 
@@ -73,7 +73,7 @@ function LocalTime() {
         <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60 motion-safe:animate-ping" />
         <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
       </span>
-      {time ?? "--:--"} India time (IST)
+      {time ?? "--:--"} Chennai time (IST)
     </span>
   );
 }
