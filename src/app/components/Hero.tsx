@@ -19,7 +19,7 @@ const SKILLS = [
 const ROTATE_EVERY_MS = 2200;
 
 const AVAILABILITY = "Open to full-time roles";
-const RELOCATE = "Willing to relocate to the UAE";
+const RELOCATE = "Willing to relocate to Chennai & Bangalore";
 const INTRO =
   "I design and build digital experiences from idea to interface, combining product thinking, UI/UX design, prototyping and front end development to create functional, user focused products.";
 /* ───────────────────────────────────────────────────────── */

@@ -13,7 +13,6 @@ const FIRST_NAME = "Abdul";
 const LAST_NAME = "Nawfal"; // second line under the first name
 const POSITION = "UI/UX & Product Designer";
 const EXPERIENCE = "2.5 yrs";
-const LOCATION = "Chennai, India";
 const MONOGRAM = "AN";
 
 // The heading is split in two: the first part is black, the second part grey
@@ -148,19 +147,14 @@ function ProfileCard() {
           </span>
         </div>
 
-        {/* Bottom-right notch — experience + location */}
+        {/* Bottom-right notch — experience */}
         <div
           className="absolute bottom-0 right-0 flex items-center justify-center gap-3 whitespace-nowrap pl-3 md:gap-4"
           style={{ width: pct(N2W - 10, W), height: pct(N2H - 10, H) }}
         >
-          <div className="text-right leading-tight">
+          <div className="text-center leading-tight">
             <p className="text-[10px] uppercase tracking-[0.08em] text-black/50 md:text-[11px]">Experience</p>
             <p className="text-[14px] font-semibold tracking-[-0.02em] text-black sm:text-[17px] md:text-[19px]">{EXPERIENCE}</p>
-          </div>
-          <span aria-hidden="true" className="h-9 w-px bg-black/15" />
-          <div className="leading-tight">
-            <p className="text-[10px] uppercase tracking-[0.08em] text-black/50 md:text-[11px]">Location</p>
-            <p className="text-[14px] font-semibold tracking-[-0.02em] text-black sm:text-[17px] md:text-[19px]">{LOCATION}</p>
           </div>
         </div>
       </div>
