@@ -7,7 +7,7 @@ export type Answer = {
 };
 
 /** One resume, used for every application. Lives in /public. */
-export const RESUME = "/Abdul_Nawfal_UIUX_Designer_Resume.pdf";
+export const RESUME = "/Abdul_Nawfal_Resume.pdf";
 
 /** Short label on the chip, full question sent to the answer engine */
 export const QUICK_PROMPTS: { label: string; question: string }[] = [

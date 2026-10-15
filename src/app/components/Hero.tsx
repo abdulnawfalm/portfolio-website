@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 /* ── Edit these ─────────────────────────────────────────── */
 const LINKEDIN_URL = "https://www.linkedin.com/in/abdulnawfal/";
-const RESUME_URL = "/Abdul_Nawfal_UIUX_Designer_Resume.pdf"; // the file lives in /public
-const RESUME_FILENAME = "Abdul_Nawfal_UIUX_Designer_Resume.pdf"; // name the visitor's download gets
+const RESUME_URL = "/Abdul_Nawfal_Resume.pdf"; // the file lives in /public
+const RESUME_FILENAME = "Abdul_Nawfal_Resume.pdf"; // name the visitor's download gets
 
 const SKILLS = [
   "UI/UX Design",
