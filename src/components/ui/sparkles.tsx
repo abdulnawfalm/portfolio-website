@@ -16,6 +16,8 @@ type ParticlesProps = {
   maxSize?: number;
   speed?: number;
   particleColor?: string;
+  /** Several colours: each particle picks one at random (overrides particleColor) */
+  particleColors?: string[];
   particleDensity?: number;
 };
 export const SparklesCore = (props: ParticlesProps) => {
@@ -27,6 +29,7 @@ export const SparklesCore = (props: ParticlesProps) => {
     maxSize,
     speed,
     particleColor,
+    particleColors,
     particleDensity,
   } = props;
   const [init, setInit] = useState(false);
@@ -123,7 +126,7 @@ export const SparklesCore = (props: ParticlesProps) => {
                 },
               },
               color: {
-                value: particleColor || "#ffffff",
+                value: particleColors?.length ? particleColors : particleColor || "#ffffff",
                 animation: {
                   h: {
                     count: 0,

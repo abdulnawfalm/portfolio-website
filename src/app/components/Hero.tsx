@@ -167,9 +167,12 @@ function usePrefersReducedMotion() {
   );
 }
 
+/** Particle palette: Apple-style blue, purple, pink, orange, green and graphite */
+const PARTICLE_COLORS = ["#0071E3", "#AF52DE", "#FF2D55", "#FF9500", "#34C759", "#5E5CE6", "#1D1D1F"];
+
 /**
  * Aceternity "Sparkles" as a full background, light theme:
- * fine dark particles scattered across the whole hero, twinkling and drifting.
+ * fine colourful particles scattered across the whole hero, twinkling and drifting.
  * Fades out at the bottom so it blends into the next section.
  */
 function HeroSparkles() {
@@ -183,11 +186,11 @@ function HeroSparkles() {
       <SparklesCore
         id="hero-sparkles"
         background="transparent"
-        minSize={0.6}
-        maxSize={1.4}
+        minSize={0.8}
+        maxSize={1.8}
         particleDensity={100}
         className="h-full w-full"
-        particleColor="#1D1D1F"
+        particleColors={PARTICLE_COLORS}
       />
     </div>
   );
