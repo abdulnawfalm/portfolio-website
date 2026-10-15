@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 const EMAIL = "abdulnawfal11011@gmail.com"; // ← your email
 const NAME = "Abdul Nawfal";
 const WORDMARK = "DESIGNER"; // big word at the bottom — matches your header logo
-const LOCATION = "Chennai, India";
-const TIME_ZONE = "Asia/Kolkata";
+const LOCATION = "Dubai, UAE";
+const TIME_ZONE = "Asia/Dubai";
 
 /** Opens a new Gmail message addressed to you, in a new tab */
 const GMAIL_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}&su=${encodeURIComponent("Hello Abdul")}`;
@@ -22,7 +22,6 @@ const QUICK_LINKS = [
 const SOCIALS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/abdulnawfal/" },
   { label: "GitHub", href: "https://github.com/abdulnawfalm" },
-  { label: "Behance", href: "https://www.behance.net/AbdulNawfal" },
 ];
 /* ───────────────────────────────────────────────────────── */
 
@@ -55,7 +54,7 @@ function ArrowUp({ className = "" }: { className?: string }) {
   );
 }
 
-/** Live Chennai time (IST), updated every 20 seconds (shown after the page loads to avoid a mismatch) */
+/** Live Dubai time (GST), updated every 20 seconds (shown after the page loads to avoid a mismatch) */
 function LocalTime() {
   const [time, setTime] = useState<string | null>(null);
 
@@ -73,7 +72,7 @@ function LocalTime() {
         <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60 motion-safe:animate-ping" />
         <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
       </span>
-      {time ?? "--:--"} Chennai time (IST)
+      {time ?? "--:--"} Dubai time (GST)
     </span>
   );
 }

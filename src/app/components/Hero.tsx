@@ -19,7 +19,7 @@ const SKILLS = [
 const ROTATE_EVERY_MS = 2200;
 
 const AVAILABILITY = "Open to full-time roles";
-const RELOCATE = "Willing to relocate to Chennai & Bangalore";
+const LOCATION = "Dubai, UAE";
 const INTRO =
   "I design and build digital experiences from idea to interface, combining product thinking, UI/UX design, prototyping and front end development to create functional, user focused products.";
 /* ───────────────────────────────────────────────────────── */
@@ -187,13 +187,13 @@ export default function Hero() {
             </span>
             {AVAILABILITY}
           </p>
-          {/* Light blue: willing to relocate */}
-          <p className="inline-flex items-center gap-2 rounded-full bg-[#EAF2FE] px-3.5 py-2 text-[13px] font-semibold text-[#0066CC] ring-1 ring-inset ring-[#0066CC]/15 md:text-[14px]">
+          {/* Warm sand: location */}
+          <p className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(135deg,#FFF6E8_0%,#FFE9D2_100%)] px-3.5 py-2 text-[13px] font-semibold text-[#B45309] ring-1 ring-inset ring-[#F59E0B]/30 md:text-[14px]">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5" aria-hidden="true">
               <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" />
               <circle cx="12" cy="9.5" r="2.5" />
             </svg>
-            {RELOCATE}
+            {LOCATION}
           </p>
         </div>
 

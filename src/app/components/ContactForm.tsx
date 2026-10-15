@@ -5,7 +5,7 @@ import { useState } from "react";
 /* ── Edit these ─────────────────────────────────────────── */
 const EMAIL = "abdulnawfal11011@gmail.com"; // ← your email
 const AVAILABILITY = "Open to full-time roles"; // e.g. "Open to full-time & contract roles"
-const PHONE = "+91 81221 29168";
+const PHONE = "+971 56 626 5174";
 const RESPONSE_TIME = "Usually within 24 hours"; // how fast you reply
 
 /**

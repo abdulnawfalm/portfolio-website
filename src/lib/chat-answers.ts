@@ -32,7 +32,7 @@ export const ANSWERS: Answer[] = [
   {
     match: ["relocate", "relocation", "relocating", "move", "moving", "shift", "dubai", "uae", "emirates", "abroad", "overseas", "visa", "sponsor", "onsite", "on-site", "bangalore", "bengaluru", "india", "chennai"],
     text:
-      "Willing to relocate to Chennai & Bangalore, and ready to join on-site.",
+      "Based in Dubai, UAE, and ready to join on-site.",
   },
   {
     match: ["experience", "experienced", "years", "year", "yrs", "how long", "senior", "junior", "level", "background", "career", "worked"],
@@ -70,7 +70,7 @@ export const ANSWERS: Answer[] = [
   {
     match: ["location", "located", "based", "where", "live", "city", "country", "chennai", "india", "timezone", "time zone"],
     text:
-      "Willing to relocate to Chennai & Bangalore, and ready to join on-site.",
+      "Based in Dubai, UAE, and ready to join on-site.",
   },
 ];
 
@@ -83,7 +83,7 @@ ANSWERS.push(
   {
     match: ["who", "about", "tell me", "introduce", "yourself", "himself", "bio"],
     text:
-      "Abdul Nawfal is a UI/UX and Product Designer with 2.5 years of experience and 20+ projects shipped. He designs interfaces and builds them in React and Next.js, and he's open to full-time roles in Chennai & Bangalore.",
+      "Abdul Nawfal is a UI/UX and Product Designer based in Dubai, UAE, with 2.5 years of experience and 20+ projects shipped. He designs interfaces and builds them in React and Next.js, and he's open to full-time roles in the UAE.",
     links: [{ label: "See the work", href: "/#work" }],
   },
 );
