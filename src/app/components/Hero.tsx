@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 /* ── Edit these ─────────────────────────────────────────── */
 const LINKEDIN_URL = "https://www.linkedin.com/in/abdulnawfal/";
@@ -153,6 +154,51 @@ function RotatingSkill() {
   );
 }
 
+/** True when the visitor asked their device to reduce motion */
+function usePrefersReducedMotion() {
+  return useSyncExternalStore(
+    (onChange) => {
+      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+      mq.addEventListener("change", onChange);
+      return () => mq.removeEventListener("change", onChange);
+    },
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    () => true, // server render: skip the sparkles until the browser decides
+  );
+}
+
+/**
+ * Aceternity "Sparkles", light theme: a glowing line under the title and a
+ * cloud of fine dark particles that fades out. Sits behind the hero content.
+ */
+function HeroSparkles() {
+  const reduceMotion = usePrefersReducedMotion();
+  return (
+    <div aria-hidden="true" className="pointer-events-none relative mt-4 h-28 w-full max-w-[40rem] md:mt-6 md:h-36">
+      {/* Gradients */}
+      <div className="absolute inset-x-[12%] top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
+      <div className="absolute inset-x-[12%] top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+      <div className="absolute inset-x-[37%] top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm" />
+      <div className="absolute inset-x-[37%] top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
+
+      {/* Core component (the glow line stays, particles are skipped for reduced motion) */}
+      {!reduceMotion && (
+      <SparklesCore
+        background="transparent"
+        minSize={0.4}
+        maxSize={1}
+        particleDensity={1200}
+        className="h-full w-full"
+        particleColor="#1D1D1F"
+      />
+      )}
+
+      {/* Radial gradient to prevent sharp edges (white for the light theme) */}
+      <div className="absolute inset-0 h-full w-full bg-white [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]" />
+    </div>
+  );
+}
+
 export default function Hero() {
   const [ready, setReady] = useState(false);
   useEffect(() => {
@@ -197,8 +243,9 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Title */}
-        <h1 className="mt-8 text-[clamp(48px,7.4vw,120px)] font-medium leading-[1] tracking-[-0.05em] md:mt-10">
+        {/* Title, with the sparkles glowing underneath */}
+        <div className="mt-8 md:mt-10">
+        <h1 className="relative z-20 text-[clamp(48px,7.4vw,120px)] font-medium leading-[1] tracking-[-0.05em]">
           <span className="sr-only">I design {SKILLS.join(", ")}.</span>
           <span aria-hidden="true">
             {/* Extra bottom padding (cancelled by a negative margin) gives the "g"
@@ -217,11 +264,13 @@ export default function Hero() {
             </span>
           </span>
         </h1>
+          <HeroSparkles />
+        </div>
 
         {/* Intro on the left, buttons on the right (stacked on phones) */}
         <div
           style={fade(550).style}
-          className={`${fade(550).className} mt-10 flex flex-col gap-8 md:mt-14 lg:flex-row lg:items-end lg:justify-between`}
+          className={`${fade(550).className} relative z-10 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between`}
         >
           <p className="max-w-[34rem] text-pretty text-[17px] leading-[1.65] text-neutral-500 md:text-[19px]">
             {INTRO}
