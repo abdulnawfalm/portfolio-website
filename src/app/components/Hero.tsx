@@ -224,7 +224,7 @@ export default function Hero() {
         {/* Availability badge, same style as the contact page */}
         <div style={fade(100).style} className={`${fade(100).className} flex flex-wrap items-center gap-3`}>
           {/* Light green: available now */}
-          <p className="inline-flex items-center gap-2 rounded-full bg-[#E9F8EF] px-3.5 py-2 text-[13px] font-semibold text-[#1A7F45] ring-1 ring-inset ring-[#1A7F45]/15 md:text-[14px]">
+          <p className="inline-flex items-center gap-2 badge-green rounded-full bg-[#E9F8EF] px-3.5 py-2 text-[13px] font-semibold text-[#1A7F45] ring-1 ring-inset ring-[#1A7F45]/15 md:text-[14px]">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-[#22A55B] opacity-60 motion-safe:animate-ping" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#22A55B]" />
@@ -232,7 +232,7 @@ export default function Hero() {
             {AVAILABILITY}
           </p>
           {/* Warm sand: location */}
-          <p className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(135deg,#FFF6E8_0%,#FFE9D2_100%)] px-3.5 py-2 text-[13px] font-semibold text-[#B45309] ring-1 ring-inset ring-[#F59E0B]/30 md:text-[14px]">
+          <p className="inline-flex items-center gap-2 badge-amber rounded-full bg-[linear-gradient(135deg,#FFF6E8_0%,#FFE9D2_100%)] px-3.5 py-2 text-[13px] font-semibold text-[#B45309] ring-1 ring-inset ring-[#F59E0B]/30 md:text-[14px]">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5" aria-hidden="true">
               <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" />
               <circle cx="12" cy="9.5" r="2.5" />

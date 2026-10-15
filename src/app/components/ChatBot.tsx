@@ -152,7 +152,7 @@ export default function ChatBot() {
         }`}
       >
         {/* Header */}
-        <div className="flex items-start gap-3 bg-[linear-gradient(180deg,#F5F5F7_0%,#FFFFFF_100%)] px-4 pb-3 pt-[max(1rem,env(safe-area-inset-top))]">
+        <div className="chat-head flex items-start gap-3 bg-[linear-gradient(180deg,#F5F5F7_0%,#FFFFFF_100%)] px-4 pb-3 pt-[max(1rem,env(safe-area-inset-top))]">
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#1D1D1F] text-white">
             <Sparkle className="h-4 w-4" />
           </span>

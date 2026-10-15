@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import ThemeToggle from "@/app/components/ThemeToggle";
 
 /* ── Edit these ─────────────────────────────────────────── */
 const LOGO = "Designer"; // matches the big wordmark in the footer
@@ -121,7 +122,10 @@ export default function Header() {
             </ul>
           </nav>
 
-          <div className="flex items-center justify-self-end">
+          <div className="flex items-center gap-2 justify-self-end md:gap-3">
+            {/* Light / dark theme switch */}
+            <ThemeToggle />
+
             {/* Desktop Contact: same black pill as the rest of the site */}
             <Link
               href="/contact"

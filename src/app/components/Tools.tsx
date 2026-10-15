@@ -38,7 +38,7 @@ export default function Tools() {
                 className="group flex h-[150px] flex-col items-center justify-center gap-4 rounded-[24px] px-3 text-center motion-safe:transition-colors motion-safe:duration-300 hover:bg-[#F5F5F7] md:h-[190px] lg:h-[210px]"
               >
                 <span
-                  className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-[14px] bg-[#F5F5F7] text-[15px] font-semibold tracking-[-0.02em] text-black motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 md:h-14 md:w-14 md:text-[16px]"
+                  className="flex h-12 w-12 items-center justify-center overflow-hidden tool-tile rounded-[14px] bg-[#F5F5F7] text-[15px] font-semibold tracking-[-0.02em] text-black motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 md:h-14 md:w-14 md:text-[16px]"
                 >
                   {tool.icon ? (
                     // eslint-disable-next-line @next/next/no-img-element

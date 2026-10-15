@@ -83,3 +83,107 @@ section[id] {
   mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0.45) calc(100% - 160px), transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0, 0, 0, 0.45) calc(100% - 160px), transparent 100%);
 }
+/* ══════════════════════════════════════════════════════════════
+   Dark theme (Apple style). Turned on by the toggle in the header,
+   which adds class="dark" to <html> and remembers the choice.
+   These rules sit outside Tailwind's layers, so they win over the
+   light colours written in the components.
+   ══════════════════════════════════════════════════════════════ */
+html.dark {
+  color-scheme: dark;
+  --background: #000000;
+  --foreground: #f5f5f7;
+  --muted: #8e8e93;
+  --border: #2c2c2e;
+  --hero-top-tint: #000000;
+  --hero-glow-1: #000000;
+  --hero-glow-2: #000000;
+}
+.dark * {
+  --tw-ring-offset-color: #000000;
+}
+
+/* Surfaces: white and light grey become Apple's dark greys */
+.dark .bg-white,
+.dark .bg-\[\#F5F5F7\],
+.dark .bg-neutral-100 {
+  background-color: #1c1c1e;
+}
+.dark .bg-\[\#E8E8ED\] {
+  background-color: #2c2c2e;
+}
+.dark .bg-white\/85 { background-color: rgb(0 0 0 / 0.8); }
+.dark .bg-white\/80 { background-color: rgb(28 28 30 / 0.8); }
+.dark .bg-white\/70 { background-color: rgb(28 28 30 / 0.7); }
+.dark .bg-\[\#F5F5F7\]\/90 { background-color: rgb(28 28 30 / 0.9); }
+
+/* Text: black becomes near white; greys get a little lighter for contrast */
+.dark .text-black { color: #f5f5f7; }
+.dark .text-black\/70 { color: rgb(245 245 247 / 0.7); }
+.dark .text-black\/55 { color: rgb(245 245 247 / 0.55); }
+.dark .text-black\/50 { color: rgb(245 245 247 / 0.5); }
+.dark .text-black\/35 { color: rgb(245 245 247 / 0.35); }
+.dark .text-black\/\[0\.07\] { color: rgb(255 255 255 / 0.07); }
+.dark .text-neutral-500 { color: #98989d; }
+.dark .text-neutral-600 { color: #aeaeb2; }
+
+/* Solid black buttons and pills turn white with black text */
+.dark .bg-black { background-color: #f5f5f7; color: #000000; }
+.dark .bg-black .text-white,
+.dark .bg-black.text-white { color: #000000; }
+.dark .bg-black .text-white\/70,
+.dark .bg-black .text-white\/55,
+.dark .bg-black .text-white\/50 { color: rgb(0 0 0 / 0.55); }
+
+/* Hover, focus and active states (light versions are inside Tailwind's layers) */
+.dark .hover\:bg-black:hover,
+.dark .group:hover .group-hover\:bg-black { background-color: #f5f5f7; }
+.dark .hover\:text-white:hover { color: #000000; }
+.dark .hover\:text-black:hover,
+.dark .group:hover .group-hover\:text-black,
+.dark .focus-visible\:text-black:focus-visible { color: #f5f5f7; }
+.dark .hover\:bg-neutral-800:hover,
+.dark .active\:bg-neutral-800:active { background-color: #d1d1d6; }
+.dark .hover\:bg-white:hover,
+.dark .focus\:bg-white:focus { background-color: #2c2c2e; }
+.dark .hover\:bg-\[\#F5F5F7\]:hover,
+.dark .focus-visible\:bg-\[\#F5F5F7\]:focus-visible,
+.dark .active\:bg-\[\#F5F5F7\]:active,
+.dark .hover\:bg-\[\#E8E8ED\]:hover,
+.dark .focus-within\:bg-\[\#E8E8ED\]:focus-within { background-color: #2c2c2e; }
+
+/* Rings and borders */
+.dark .ring-black\/\[0\.06\],
+.dark .md\:ring-black\/\[0\.06\],
+.dark .ring-black\/\[0\.05\] { --tw-ring-color: rgb(255 255 255 / 0.1); }
+.dark .ring-white\/70 { --tw-ring-color: rgb(255 255 255 / 0.12); }
+.dark .border-black\/10 { border-color: rgb(255 255 255 / 0.12); }
+.dark .focus-visible\:ring-black:focus-visible,
+.dark .focus\:ring-black:focus { --tw-ring-color: #f5f5f7; }
+
+/* Hero badges: same colours, tuned for a dark background */
+.dark .badge-green { background: rgb(34 165 91 / 0.16); color: #4ade80; --tw-ring-color: rgb(74 222 128 / 0.25); }
+.dark .badge-amber { background: rgb(245 158 11 / 0.14); color: #fbbf24; --tw-ring-color: rgb(251 191 36 / 0.25); }
+
+/* Chat window header */
+.dark .chat-head { background: linear-gradient(180deg, #1c1c1e 0%, #1c1c1e 100%); }
+
+/* Tool logos keep their light tile so dark logos (Framer, Vercel) stay visible */
+.dark .tool-tile { background-color: #f5f5f7; color: #000000; }
+
+/* Surfaces nested inside a dark card sit one shade lighter (chat bubbles, form fields, inner cards) */
+.dark .bg-white .bg-\[\#F5F5F7\],
+.dark .bg-white .bg-white,
+.dark .bg-\[\#F5F5F7\] .bg-white,
+.dark .bg-\[\#F5F5F7\] .bg-\[\#F5F5F7\] {
+  background-color: #2c2c2e;
+}
+.dark .bg-white .focus\:bg-white:focus,
+.dark .bg-white .focus-within\:bg-\[\#E8E8ED\]:focus-within,
+.dark .bg-white .hover\:bg-\[\#E8E8ED\]:hover {
+  background-color: #3a3a3c;
+}
+.dark .bg-white .bg-black,
+.dark .bg-\[\#F5F5F7\] .bg-black { background-color: #f5f5f7; }
+.dark .bg-white .hover\:bg-black:hover,
+.dark .bg-\[\#F5F5F7\] .hover\:bg-black:hover { background-color: #f5f5f7; }

@@ -135,9 +135,9 @@ function Card({ project, index }: { project: Project; index: number }) {
           {!isFolder && <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#1D1D1F]/45 to-transparent" />}
 
           {/* Project name + category — text only */}
-          <div className={`absolute bottom-6 left-6 right-6 ${isFolder ? "text-black" : "text-white"} md:bottom-7 md:left-7 motion-safe:transition-transform motion-safe:duration-500 ${EASE} group-hover:-translate-y-1`}>
+          <div className={`absolute bottom-6 left-6 right-6 ${isFolder ? "text-[#1D1D1F]" : "text-white"} md:bottom-7 md:left-7 motion-safe:transition-transform motion-safe:duration-500 ${EASE} group-hover:-translate-y-1`}>
             <p className="text-[24px] font-medium leading-tight tracking-[-0.02em] md:text-[28px]">{project.title}</p>
-            <p className={`mt-1 text-[15px] md:text-[17px] ${isFolder ? "text-black/55" : "text-white/70"}`}>{project.category}</p>
+            <p className={`mt-1 text-[15px] md:text-[17px] ${isFolder ? "text-[#1D1D1F]/55" : "text-white/70"}`}>{project.category}</p>
           </div>
         </div>
 

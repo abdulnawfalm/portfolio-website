@@ -12,7 +12,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <head>
+        {/* Apply the saved theme before the page paints, so dark mode never flashes white */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark")}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="relative isolate bg-background font-sans text-foreground">
         {children}
         {/* AI chat assistant, on every page */}
