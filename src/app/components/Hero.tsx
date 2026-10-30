@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState, useSyncExternalStore } from "react";
-import { SparklesCore } from "@/components/ui/sparkles";
+import { useEffect, useState } from "react";
+import { LampBackground } from "@/components/ui/lamp";
 
 /* ── Edit these ─────────────────────────────────────────── */
 const LINKEDIN_URL = "https://www.linkedin.com/in/abdulnawfal/";
@@ -154,47 +154,9 @@ function RotatingSkill() {
   );
 }
 
-/** True when the visitor asked their device to reduce motion */
-function usePrefersReducedMotion() {
-  return useSyncExternalStore(
-    (onChange) => {
-      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-      mq.addEventListener("change", onChange);
-      return () => mq.removeEventListener("change", onChange);
-    },
-    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    () => true, // server render: skip the sparkles until the browser decides
-  );
-}
-
-/** Particle palette: sky blue, in three shades so it stays visible on white */
-const PARTICLE_COLORS = ["#0EA5E9", "#38BDF8", "#0284C7"];
-
-/**
- * Aceternity "Sparkles" as a full background, light theme:
- * fine sky-blue particles scattered across the whole hero, twinkling and drifting.
- * Fades out at the bottom so it blends into the next section.
- */
-function HeroSparkles() {
-  const reduceMotion = usePrefersReducedMotion();
-  if (reduceMotion) return null; // no moving particles for reduced motion
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-x-0 -top-20 bottom-0 -z-10 md:-top-24 [mask-image:linear-gradient(to_bottom,black_65%,transparent)]"
-    >
-      <SparklesCore
-        id="hero-sparkles"
-        background="transparent"
-        minSize={0.8}
-        maxSize={1.8}
-        particleDensity={100}
-        className="h-full w-full"
-        particleColors={PARTICLE_COLORS}
-      />
-    </div>
-  );
-}
+/** Lamp colours: change these two to recolour the hero light */
+const LAMP_COLOR = "#6366F1"; // beams and soft glow (indigo)
+const LAMP_GLOW = "#818CF8"; // bright line and hot spot
 
 export default function Hero() {
   const [ready, setReady] = useState(false);
@@ -218,11 +180,12 @@ export default function Hero() {
   });
 
   return (
-    <section id="home" className="relative isolate px-5 pb-20 pt-14 text-black md:px-10 md:pb-28 md:pt-20 lg:px-16 lg:pb-32 lg:pt-24">
-      <HeroSparkles />
-      <div className="mx-auto w-full max-w-[1200px]">
+    <section id="home" className="relative isolate overflow-hidden px-5 pb-20 pt-24 text-black md:px-10 md:pb-28 md:pt-28 lg:px-16 lg:pb-32 lg:pt-32">
+      {/* Lamp light shining down on the title */}
+      <LampBackground color={LAMP_COLOR} glow={LAMP_GLOW} className="top-0 -z-10 h-[24rem] md:h-[26rem]" />
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center text-center">
         {/* Availability badge, same style as the contact page */}
-        <div style={fade(100).style} className={`${fade(100).className} flex flex-wrap items-center gap-3`}>
+        <div style={fade(100).style} className={`${fade(100).className} flex flex-wrap items-center justify-center gap-3`}>
           {/* Light green: available now */}
           <p className="inline-flex items-center gap-2 badge-green rounded-full bg-[#E9F8EF] px-3.5 py-2 text-[13px] font-semibold text-[#1A7F45] ring-1 ring-inset ring-[#1A7F45]/15 md:text-[14px]">
             <span className="relative flex h-2 w-2">
@@ -241,7 +204,7 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Title, with the sparkles glowing underneath */}
+        {/* Title, lit by the lamp */}
         <div className="mt-8 md:mt-10">
         <h1 className="relative z-20 text-[clamp(48px,7.4vw,120px)] font-medium leading-[1] tracking-[-0.05em]">
           <span className="sr-only">I design {SKILLS.join(", ")}.</span>
@@ -264,16 +227,16 @@ export default function Hero() {
         </h1>
         </div>
 
-        {/* Intro on the left, buttons on the right (stacked on phones) */}
+        {/* Intro and buttons, centred under the title */}
         <div
           style={fade(550).style}
-          className={`${fade(550).className} relative z-10 mt-10 flex flex-col gap-8 md:mt-14 lg:flex-row lg:items-end lg:justify-between`}
+          className={`${fade(550).className} relative z-10 mt-10 flex flex-col items-center gap-8 md:mt-14`}
         >
-          <p className="max-w-[34rem] text-pretty text-[17px] leading-[1.65] text-neutral-500 md:text-[19px]">
+          <p className="mx-auto max-w-[36rem] text-pretty text-[17px] leading-[1.65] text-neutral-500 md:text-[19px]">
             {INTRO}
           </p>
 
-          <div className="flex flex-col gap-3 sm:flex-row">
+          <div className="flex flex-col justify-center gap-3 sm:flex-row">
             <CtaButton label="Download Resume" variant="dark" icon="down" href={RESUME_URL} download={RESUME_FILENAME} />
             <CtaButton
               label="LinkedIn"
