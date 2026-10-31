@@ -7,19 +7,13 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/abdulnawfal/";
 const RESUME_URL = "/Abdul_Nawfal_Resume.pdf"; // the file lives in /public
 const RESUME_FILENAME = "Abdul_Nawfal_Resume.pdf"; // name the visitor's download gets
 
-const SKILLS = [
-  "UI/UX Design",
-  "Product Design",
-  "Graphic Design",
-  "Web & Mobile",
-  "SaaS",
-  "Fintech",
-  "E-Commerce",
-];
-const ROTATE_EVERY_MS = 2200;
+/** What you do: shown as pills above the headline */
+const SKILLS = ["UI/UX Design", "Product Design", "Graphic Design", "AI Development", "Fintech & SaaS"];
 
-const AVAILABILITY = "Open to full-time roles";
-const LOCATION = "Dubai, UAE";
+/** Headline: the first part gets the colour gradient */
+const HEADLINE_GRADIENT = "I design";
+const HEADLINE_REST = ["products", "that drive results"]; // "products" sits on line one
+
 const INTRO =
   "I design and build digital experiences from idea to interface, combining product thinking, UI/UX design, prototyping and front end development to create functional, user focused products.";
 /* ───────────────────────────────────────────────────────── */
@@ -99,60 +93,6 @@ function CtaButton({
   );
 }
 
-/** "I design ___" — cycles through SKILLS with a vertical slide. */
-function RotatingSkill() {
-  const [index, setIndex] = useState(0);
-  const [animate, setAnimate] = useState(true);
-  const list = [...SKILLS, SKILLS[0]]; // extra copy of the first item for a seamless loop
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setAnimate(true);
-      setIndex((i) => i + 1);
-    }, ROTATE_EVERY_MS);
-    return () => clearInterval(id);
-  }, []);
-
-  // When we land on the duplicate first item, jump back to 0 without animation
-  useEffect(() => {
-    if (index === SKILLS.length) {
-      const t = setTimeout(() => {
-        setAnimate(false);
-        setIndex(0);
-      }, 750);
-      return () => clearTimeout(t);
-    }
-  }, [index]);
-
-  // Each slot is taller than the letters (1.4em) so descenders like g, p, y
-  // never reach into the next slot. Inactive words are also faded out,
-  // so nothing from the previous or next word can peek into view.
-  const SLOT = 1.4;
-  const move = animate ? `motion-safe:duration-700 ${EASE}` : "duration-0";
-
-  return (
-    <span className="relative block overflow-hidden" style={{ height: `${SLOT}em` }}>
-      <span
-        className={`block motion-safe:transition-transform ${move}`}
-        style={{ transform: `translateY(-${index * SLOT}em)` }}
-      >
-        {list.map((skill, i) => (
-          <span
-            key={i}
-            aria-hidden={i !== index}
-            className={`block whitespace-nowrap motion-safe:transition-opacity ${move} ${
-              i === index ? "opacity-100" : "opacity-0"
-            }`}
-            style={{ height: `${SLOT}em`, lineHeight: `${SLOT}em` }}
-          >
-            {skill}
-          </span>
-        ))}
-      </span>
-    </span>
-  );
-}
-
 export default function Hero() {
   const [ready, setReady] = useState(false);
   useEffect(() => {
@@ -176,56 +116,44 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative px-5 pb-20 pt-14 text-black md:px-10 md:pb-28 md:pt-20 lg:px-16 lg:pb-32 lg:pt-24">
-      <div className="mx-auto w-full max-w-[1200px]">
-        {/* Availability badge, same style as the contact page */}
-        <div style={fade(100).style} className={`${fade(100).className} flex flex-wrap items-center gap-3`}>
-          {/* Light green: available now */}
-          <p className="inline-flex items-center gap-2 badge-green rounded-full bg-[#E9F8EF] px-3.5 py-2 text-[13px] font-semibold text-[#1A7F45] ring-1 ring-inset ring-[#1A7F45]/15 md:text-[14px]">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-[#22A55B] opacity-60 motion-safe:animate-ping" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#22A55B]" />
-            </span>
-            {AVAILABILITY}
-          </p>
-          {/* Warm sand: location */}
-          <p className="inline-flex items-center gap-2 badge-amber rounded-full bg-[linear-gradient(135deg,#FFF6E8_0%,#FFE9D2_100%)] px-3.5 py-2 text-[13px] font-semibold text-[#B45309] ring-1 ring-inset ring-[#F59E0B]/30 md:text-[14px]">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5" aria-hidden="true">
-              <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" />
-              <circle cx="12" cy="9.5" r="2.5" />
-            </svg>
-            {LOCATION}
-          </p>
-        </div>
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center text-center">
+        {/* What I do */}
+        <ul
+          aria-label="What I do"
+          style={fade(100).style}
+          className={`${fade(100).className} flex max-w-[44rem] flex-wrap items-center justify-center gap-2 md:gap-2.5`}
+        >
+          {SKILLS.map((skill) => (
+            <li
+              key={skill}
+              className="rounded-full bg-[#F5F5F7] px-4 py-2 text-[13px] font-medium tracking-[-0.01em] text-black/70 md:text-[14px]"
+            >
+              {skill}
+            </li>
+          ))}
+        </ul>
 
-        {/* Title: "I design" in an indigo-purple-pink gradient */}
-        <div className="mt-8 md:mt-10">
-        <h1 className="relative z-20 text-[clamp(48px,7.4vw,120px)] font-medium leading-[1] tracking-[-0.05em]">
-          <span className="sr-only">I design {SKILLS.join(", ")}.</span>
-          <span aria-hidden="true">
-            {/* Extra bottom padding (cancelled by a negative margin) gives the "g"
-                room so its tail is never cut off by the reveal mask */}
-            <span className="block overflow-hidden pb-[0.22em] -mb-[0.22em]">
-              <span {...reveal(150)}>
-                <span className="hero-gradient bg-[linear-gradient(90deg,#4F46E5_0%,#9333EA_50%,#EC4899_100%)] bg-clip-text pr-[0.04em] text-transparent">I design</span>
-              </span>
-            </span>
-            {/* The rotating slot is 1.4em tall for safe descenders; negative margins
-                pull it back so the two lines keep their tight spacing */}
-            <span className="block overflow-hidden -my-[0.19em]">
-              <span {...reveal(280)}>
-                <RotatingSkill />
-              </span>
+        {/* Headline: "I design" in the colour gradient */}
+        <h1 className="mt-8 text-[clamp(44px,7.2vw,112px)] font-medium leading-[1.02] tracking-[-0.05em] md:mt-10">
+          <span className="block overflow-hidden pb-[0.12em] -mb-[0.12em]">
+            <span {...reveal(150)}>
+              <span className="hero-gradient bg-[linear-gradient(90deg,#4F9BE0_0%,#9B5FC0_30%,#E8458B_60%,#F07B4F_85%,#F5B03E_100%)] bg-clip-text pr-[0.04em] text-transparent">
+                {HEADLINE_GRADIENT}
+              </span>{" "}
+              {HEADLINE_REST[0]}
             </span>
           </span>
+          <span className="block overflow-hidden pb-[0.12em] -mb-[0.12em]">
+            <span {...reveal(280)}>{HEADLINE_REST[1]}</span>
+          </span>
         </h1>
-        </div>
 
-        {/* Intro on the left, buttons on the right (stacked on phones) */}
+        {/* Intro and buttons */}
         <div
           style={fade(550).style}
-          className={`${fade(550).className} relative z-10 mt-10 flex flex-col gap-8 md:mt-14 lg:flex-row lg:items-end lg:justify-between`}
+          className={`${fade(550).className} mt-8 flex flex-col items-center gap-9 md:mt-10`}
         >
-          <p className="max-w-[34rem] text-pretty text-[17px] leading-[1.65] text-neutral-500 md:text-[19px]">
+          <p className="max-w-[40rem] text-pretty text-[17px] leading-[1.65] text-neutral-500 md:text-[19px]">
             {INTRO}
           </p>
 
