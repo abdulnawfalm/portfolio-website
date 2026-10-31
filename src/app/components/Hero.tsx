@@ -10,6 +10,7 @@ const RESUME_FILENAME = "Abdul_Nawfal_Resume.pdf"; // name the visitor's downloa
 /** What you do: these rotate under "I design" in the headline */
 const SKILLS = ["UI/UX Design", "Product Design", "Graphic Design", "AI Development", "Fintech & SaaS"];
 const ROTATE_EVERY_MS = 2200; // how long each one stays before sliding to the next
+const LOCATION = "Dubai, UAE";
 
 const INTRO =
   "I design and build digital experiences from idea to interface, combining product thinking, UI/UX design, prototyping and front end development to create functional, user focused products.";
@@ -168,8 +169,20 @@ export default function Hero() {
   return (
     <section id="home" className="relative px-5 pb-20 pt-14 text-black md:px-10 md:pb-28 md:pt-20 lg:px-16 lg:pb-32 lg:pt-24">
       <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center text-center">
+        {/* Location */}
+        <p
+          style={fade(100).style}
+          className={`${fade(100).className} badge-amber inline-flex items-center gap-2 rounded-full bg-[linear-gradient(135deg,#FFF6E8_0%,#FFE9D2_100%)] px-3.5 py-2 text-[13px] font-semibold text-[#B45309] ring-1 ring-inset ring-[#F59E0B]/30 md:text-[14px]`}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5" aria-hidden="true">
+            <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" />
+            <circle cx="12" cy="9.5" r="2.5" />
+          </svg>
+          {LOCATION}
+        </p>
+
         {/* Headline: "I design" in the colour gradient, then the skills sliding one by one */}
-        <h1 className="text-[clamp(44px,7.4vw,120px)] font-medium leading-[1] tracking-[-0.05em]">
+        <h1 className="mt-8 md:mt-10 text-[clamp(44px,7.4vw,120px)] font-medium leading-[1] tracking-[-0.05em]">
           <span className="sr-only">I design {SKILLS.join(", ")}.</span>
           <span aria-hidden="true">
             {/* Extra bottom padding (cancelled by a negative margin) keeps the "g" tail visible */}
