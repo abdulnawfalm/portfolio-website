@@ -197,7 +197,7 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Title: "I design" in a navy-to-blue gradient */}
+        {/* Title: "I design" in an indigo-purple-pink gradient */}
         <div className="mt-8 md:mt-10">
         <h1 className="relative z-20 text-[clamp(48px,7.4vw,120px)] font-medium leading-[1] tracking-[-0.05em]">
           <span className="sr-only">I design {SKILLS.join(", ")}.</span>
@@ -206,7 +206,7 @@ export default function Hero() {
                 room so its tail is never cut off by the reveal mask */}
             <span className="block overflow-hidden pb-[0.22em] -mb-[0.22em]">
               <span {...reveal(150)}>
-                <span className="hero-gradient bg-[linear-gradient(90deg,#0B1220_0%,#1E3A8A_45%,#3B82F6_80%,#93C5FD_100%)] bg-clip-text pr-[0.04em] text-transparent">I design</span>
+                <span className="hero-gradient bg-[linear-gradient(90deg,#4F46E5_0%,#9333EA_50%,#EC4899_100%)] bg-clip-text pr-[0.04em] text-transparent">I design</span>
               </span>
             </span>
             {/* The rotating slot is 1.4em tall for safe descenders; negative margins
