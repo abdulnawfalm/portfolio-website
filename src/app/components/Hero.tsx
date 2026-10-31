@@ -169,16 +169,27 @@ export default function Hero() {
   return (
     <section id="home" className="relative px-5 pb-20 pt-14 text-black md:px-10 md:pb-28 md:pt-20 lg:px-16 lg:pb-32 lg:pt-24">
       <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center text-center">
-        {/* Location */}
+        {/* Location: pill with a thin border in the same colour gradient as "I design" */}
         <p
           style={fade(100).style}
-          className={`${fade(100).className} badge-amber inline-flex items-center gap-2 rounded-full bg-[linear-gradient(135deg,#FFF6E8_0%,#FFE9D2_100%)] px-3.5 py-2 text-[13px] font-semibold text-[#B45309] ring-1 ring-inset ring-[#F59E0B]/30 md:text-[14px]`}
+          className={`${fade(100).className} hero-gradient rounded-full bg-[linear-gradient(90deg,#4F9BE0_0%,#9B5FC0_30%,#E8458B_60%,#F07B4F_85%,#F5B03E_100%)] p-[1.5px] shadow-[0_6px_24px_-8px_rgba(232,69,139,0.35)]`}
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5" aria-hidden="true">
-            <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" />
-            <circle cx="12" cy="9.5" r="2.5" />
-          </svg>
-          {LOCATION}
+          <span className="flex items-center gap-2 rounded-full bg-[var(--background)] px-4 py-2 text-[13px] font-semibold md:text-[14px]">
+            <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
+              <defs>
+                <linearGradient id="pin-grad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#9B5FC0" />
+                  <stop offset="55%" stopColor="#E8458B" />
+                  <stop offset="100%" stopColor="#F07B4F" />
+                </linearGradient>
+              </defs>
+              <path d="M12 22s-7.5-6.4-7.5-12A7.5 7.5 0 0 1 19.5 10c0 5.6-7.5 12-7.5 12Z" fill="url(#pin-grad)" />
+              <circle cx="12" cy="10" r="2.6" fill="white" />
+            </svg>
+            <span className="hero-gradient bg-[linear-gradient(90deg,#4F9BE0_0%,#9B5FC0_30%,#E8458B_60%,#F07B4F_85%,#F5B03E_100%)] bg-clip-text text-transparent">
+              {LOCATION}
+            </span>
+          </span>
         </p>
 
         {/* Headline: "I design" in the colour gradient, then the skills sliding one by one */}
