@@ -7,12 +7,9 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/abdulnawfal/";
 const RESUME_URL = "/Abdul_Nawfal_Resume.pdf"; // the file lives in /public
 const RESUME_FILENAME = "Abdul_Nawfal_Resume.pdf"; // name the visitor's download gets
 
-/** What you do: shown as pills above the headline */
+/** What you do: these rotate under "I design" in the headline */
 const SKILLS = ["UI/UX Design", "Product Design", "Graphic Design", "AI Development", "Fintech & SaaS"];
-
-/** Headline: the first part gets the colour gradient */
-const HEADLINE_GRADIENT = "I design";
-const HEADLINE_REST = ["products", "that drive results"]; // "products" sits on line one
+const ROTATE_EVERY_MS = 2200; // how long each one stays before sliding to the next
 
 const INTRO =
   "I design and build digital experiences from idea to interface, combining product thinking, UI/UX design, prototyping and front end development to create functional, user focused products.";
@@ -93,6 +90,60 @@ function CtaButton({
   );
 }
 
+/** "I design ___" — cycles through SKILLS with a vertical slide. */
+function RotatingSkill() {
+  const [index, setIndex] = useState(0);
+  const [animate, setAnimate] = useState(true);
+  const list = [...SKILLS, SKILLS[0]]; // extra copy of the first item for a seamless loop
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setAnimate(true);
+      setIndex((i) => i + 1);
+    }, ROTATE_EVERY_MS);
+    return () => clearInterval(id);
+  }, []);
+
+  // When we land on the duplicate first item, jump back to 0 without animation
+  useEffect(() => {
+    if (index === SKILLS.length) {
+      const t = setTimeout(() => {
+        setAnimate(false);
+        setIndex(0);
+      }, 750);
+      return () => clearTimeout(t);
+    }
+  }, [index]);
+
+  // Each slot is taller than the letters (1.4em) so descenders like g, p, y
+  // never reach into the next slot. Inactive words are also faded out,
+  // so nothing from the previous or next word can peek into view.
+  const SLOT = 1.4;
+  const move = animate ? `motion-safe:duration-700 ${EASE}` : "duration-0";
+
+  return (
+    <span className="relative block overflow-hidden" style={{ height: `${SLOT}em` }}>
+      <span
+        className={`block motion-safe:transition-transform ${move}`}
+        style={{ transform: `translateY(-${index * SLOT}em)` }}
+      >
+        {list.map((skill, i) => (
+          <span
+            key={i}
+            aria-hidden={i !== index}
+            className={`block whitespace-nowrap motion-safe:transition-opacity ${move} ${
+              i === index ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ height: `${SLOT}em`, lineHeight: `${SLOT}em` }}
+          >
+            {skill}
+          </span>
+        ))}
+      </span>
+    </span>
+  );
+}
+
 export default function Hero() {
   const [ready, setReady] = useState(false);
   useEffect(() => {
@@ -117,41 +168,31 @@ export default function Hero() {
   return (
     <section id="home" className="relative px-5 pb-20 pt-14 text-black md:px-10 md:pb-28 md:pt-20 lg:px-16 lg:pb-32 lg:pt-24">
       <div className="mx-auto flex w-full max-w-[1200px] flex-col items-center text-center">
-        {/* What I do */}
-        <ul
-          aria-label="What I do"
-          style={fade(100).style}
-          className={`${fade(100).className} flex max-w-[44rem] flex-wrap items-center justify-center gap-2 md:gap-2.5`}
-        >
-          {SKILLS.map((skill) => (
-            <li
-              key={skill}
-              className="rounded-full bg-[#F5F5F7] px-4 py-2 text-[13px] font-medium tracking-[-0.01em] text-black/70 md:text-[14px]"
-            >
-              {skill}
-            </li>
-          ))}
-        </ul>
-
-        {/* Headline: "I design" in the colour gradient */}
-        <h1 className="mt-8 text-[clamp(44px,7.2vw,112px)] font-medium leading-[1.02] tracking-[-0.05em] md:mt-10">
-          <span className="block overflow-hidden pb-[0.12em] -mb-[0.12em]">
-            <span {...reveal(150)}>
-              <span className="hero-gradient bg-[linear-gradient(90deg,#4F9BE0_0%,#9B5FC0_30%,#E8458B_60%,#F07B4F_85%,#F5B03E_100%)] bg-clip-text pr-[0.04em] text-transparent">
-                {HEADLINE_GRADIENT}
-              </span>{" "}
-              {HEADLINE_REST[0]}
+        {/* Headline: "I design" in the colour gradient, then the skills sliding one by one */}
+        <h1 className="text-[clamp(44px,7.4vw,120px)] font-medium leading-[1] tracking-[-0.05em]">
+          <span className="sr-only">I design {SKILLS.join(", ")}.</span>
+          <span aria-hidden="true">
+            {/* Extra bottom padding (cancelled by a negative margin) keeps the "g" tail visible */}
+            <span className="block overflow-hidden pb-[0.22em] -mb-[0.22em]">
+              <span {...reveal(150)}>
+                <span className="hero-gradient bg-[linear-gradient(90deg,#4F9BE0_0%,#9B5FC0_30%,#E8458B_60%,#F07B4F_85%,#F5B03E_100%)] bg-clip-text px-[0.02em] pb-[0.1em] text-transparent">
+                  I design
+                </span>
+              </span>
             </span>
-          </span>
-          <span className="block overflow-hidden pb-[0.12em] -mb-[0.12em]">
-            <span {...reveal(280)}>{HEADLINE_REST[1]}</span>
+            {/* The rotating slot is 1.4em tall for safe descenders; negative margins keep the lines tight */}
+            <span className="block overflow-hidden -my-[0.19em]">
+              <span {...reveal(280)}>
+                <RotatingSkill />
+              </span>
+            </span>
           </span>
         </h1>
 
         {/* Intro and buttons */}
         <div
           style={fade(550).style}
-          className={`${fade(550).className} mt-8 flex flex-col items-center gap-9 md:mt-10`}
+          className={`${fade(550).className} mt-10 flex flex-col items-center gap-9 md:mt-14`}
         >
           <p className="max-w-[40rem] text-pretty text-[17px] leading-[1.65] text-neutral-500 md:text-[19px]">
             {INTRO}
